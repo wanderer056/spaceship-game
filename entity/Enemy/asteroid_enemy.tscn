@@ -1,0 +1,12 @@
+[gd_scene load_steps=2 format=3 uid="uid://bqponbnbw5ddv"]
+
+[ext_resource type="PackedScene" uid="uid://bd0stu5fp1bad" path="res://entity/Enemy/base_enemy.tscn" id="1_yewtr"]
+
+[node name="AsteroidEnemy" instance=ExtResource("1_yewtr")]
+
+[node name="Sprite2D" parent="." index="0"]
+rotation = -2.15374
+scale = Vector2(2, 2)
+
+[node name="CollisionShape2D" parent="." index="1"]
+scale = Vector2(-6.27, -5.25253)

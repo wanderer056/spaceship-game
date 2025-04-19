@@ -1,0 +1,15 @@
+[gd_scene load_steps=4 format=3 uid="uid://crbmmdoj2ated"]
+
+[ext_resource type="PackedScene" uid="uid://xq22n83d7x2j" path="res://entity/Rockets/rocket_1.tscn" id="1_2c3t7"]
+[ext_resource type="PackedScene" uid="uid://3ijf8dh0m6fm" path="res://entity/Rockets/rocket_2.tscn" id="2_4l47d"]
+[ext_resource type="PackedScene" uid="uid://r6sx0qx8u34r" path="res://entity/Rockets/rocket_3.tscn" id="3_2arf8"]
+
+[node name="Rockets" type="Node2D"]
+
+[node name="Rocket1" parent="." groups=["rockets"] instance=ExtResource("1_2c3t7")]
+visible = false
+
+[node name="Rocket2" parent="." groups=["rockets"] instance=ExtResource("2_4l47d")]
+visible = false
+
+[node name="Rocket3" parent="." groups=["rockets"] instance=ExtResource("3_2arf8")]

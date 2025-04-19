@@ -1,0 +1,11 @@
+[gd_scene load_steps=3 format=3 uid="uid://r6sx0qx8u34r"]
+
+[ext_resource type="PackedScene" uid="uid://b06uhbsup25wi" path="res://entity/player_base.tscn" id="1_r1g6o"]
+[ext_resource type="Texture2D" uid="uid://cfnmu5sxt4a7s" path="res://assets/kenney_space-shooter-redux/PNG/playerShip3_red.png" id="2_d6fyu"]
+
+[node name="Rocket3" instance=ExtResource("1_r1g6o")]
+boost_speed = 1500
+agility = 800
+
+[node name="Sprite2D" parent="." index="0"]
+texture = ExtResource("2_d6fyu")

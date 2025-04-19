@@ -1,0 +1,18 @@
+[gd_scene load_steps=3 format=3 uid="uid://dfufm6bxdjf8p"]
+
+[ext_resource type="PackedScene" uid="uid://bd0stu5fp1bad" path="res://entity/Enemy/base_enemy.tscn" id="1_16a7w"]
+[ext_resource type="Texture2D" uid="uid://bfrve0vbgmeqm" path="res://assets/kenney_space-shooter-redux/PNG/Meteors/meteorGrey_big1.png" id="2_k6sdy"]
+
+[node name="MeteoriteEnemy" instance=ExtResource("1_16a7w")]
+rotation = 2.6337
+scale = Vector2(1.5, 1.5)
+speed = 2
+enemy_rotation = 2.0
+damage = 30.0
+score_points = 15
+
+[node name="Sprite2D" parent="." index="0"]
+texture = ExtResource("2_k6sdy")
+
+[node name="CollisionShape2D" parent="." index="1"]
+scale = Vector2(2.49715, 2.60925)

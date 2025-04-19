@@ -1,0 +1,27 @@
+[gd_scene load_steps=3 format=3 uid="uid://b06uhbsup25wi"]
+
+[ext_resource type="Script" path="res://entity/player_base.gd" id="1_mkdir"]
+[ext_resource type="Texture2D" uid="uid://bwtp5tjpurq63" path="res://assets/kenney_space-shooter-redux/PNG/playerShip1_blue.png" id="2_onero"]
+
+[node name="PlayerBase" type="CharacterBody2D"]
+scale = Vector2(1.5, 1.5)
+collision_mask = 2
+motion_mode = 1
+script = ExtResource("1_mkdir")
+metadata/_edit_group_ = true
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("2_onero")
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
+polygon = PackedVector2Array(-12, -12, -9, -37, 7, -37, 12, -13, 34, 2, 50, -8, 48, 25, 42, 20, 13, 28, 7, 38, -4, 39, -13, 28, -42, 21, -47, 26, -49, -6, -40, 0)
+
+[node name="Camera2D" type="Camera2D" parent="."]
+offset = Vector2(0, -600)
+limit_left = 0
+limit_right = 1000
+position_smoothing_enabled = true
+position_smoothing_speed = 15.0
+drag_horizontal_enabled = true
+drag_left_margin = 1.0
+drag_right_margin = 1.0

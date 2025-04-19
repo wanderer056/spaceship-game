@@ -1,0 +1,7 @@
+[gd_scene load_steps=2 format=3 uid="uid://xq22n83d7x2j"]
+
+[ext_resource type="PackedScene" uid="uid://b06uhbsup25wi" path="res://entity/player_base.tscn" id="1_52kla"]
+
+[node name="Rocket1" instance=ExtResource("1_52kla")]
+boost_speed = 500
+health = 150

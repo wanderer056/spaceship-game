@@ -1,0 +1,110 @@
+[gd_scene load_steps=16 format=3 uid="uid://dblfj11mb0fas"]
+
+[ext_resource type="PackedScene" uid="uid://bd0stu5fp1bad" path="res://entity/Enemy/base_enemy.tscn" id="1_2tewg"]
+[ext_resource type="Script" path="res://entity/Enemy/comet_enemy.gd" id="2_gjv4f"]
+[ext_resource type="Texture2D" uid="uid://d4da2k13av3w0" path="res://assets/fire1_64.png" id="2_yncd7"]
+[ext_resource type="Texture2D" uid="uid://beyemg5w0rtr6" path="res://assets/kenney_space-shooter-redux/PNG/Meteors/meteorGrey_med1.png" id="3_fj4ri"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_w44ml"]
+atlas = ExtResource("2_yncd7")
+region = Rect2(0, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_p8ff3"]
+atlas = ExtResource("2_yncd7")
+region = Rect2(64, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_kgyng"]
+atlas = ExtResource("2_yncd7")
+region = Rect2(128, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_kpaqb"]
+atlas = ExtResource("2_yncd7")
+region = Rect2(192, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_dn6tl"]
+atlas = ExtResource("2_yncd7")
+region = Rect2(256, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_tu863"]
+atlas = ExtResource("2_yncd7")
+region = Rect2(320, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_o7dwo"]
+atlas = ExtResource("2_yncd7")
+region = Rect2(384, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_e7pts"]
+atlas = ExtResource("2_yncd7")
+region = Rect2(448, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_uvrqn"]
+atlas = ExtResource("2_yncd7")
+region = Rect2(512, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_3dgt5"]
+atlas = ExtResource("2_yncd7")
+region = Rect2(576, 0, 64, 64)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_jj68r"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_w44ml")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_p8ff3")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_kgyng")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_kpaqb")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_dn6tl")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_tu863")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_o7dwo")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_e7pts")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_uvrqn")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_3dgt5")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[node name="CometEnemy" instance=ExtResource("1_2tewg")]
+position = Vector2(0, -17)
+scale = Vector2(1.5, 1.5)
+script = ExtResource("2_gjv4f")
+speed = 3
+damage = 70.0
+metadata/_edit_group_ = true
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." index="0"]
+position = Vector2(5, -65)
+scale = Vector2(4.78906, 4.0625)
+sprite_frames = SubResource("SpriteFrames_jj68r")
+autoplay = "default"
+frame_progress = 0.037127
+
+[node name="Sprite2D" parent="." index="1"]
+modulate = Color(0.984314, 0.984314, 0.984314, 0.439216)
+visibility_layer = 2
+position = Vector2(-1.5, -0.5)
+scale = Vector2(1.32558, 1.37209)
+texture = ExtResource("3_fj4ri")
+
+[node name="CollisionShape2D" parent="." index="2"]
+position = Vector2(0, -20)
+scale = Vector2(3.62275, 3.09195)

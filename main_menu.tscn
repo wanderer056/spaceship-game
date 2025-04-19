@@ -1,0 +1,102 @@
+[gd_scene load_steps=9 format=3 uid="uid://d08igx3eny2m1"]
+
+[ext_resource type="Texture2D" uid="uid://dyqwqkqa80ucp" path="res://assets/Purple Nebula/Purple_Nebula_07-1024x1024.png" id="1_7wvhw"]
+[ext_resource type="Script" path="res://main_menu.gd" id="1_53brk"]
+[ext_resource type="FontFile" uid="uid://dovut0ep47tvw" path="res://assets/kenney_space-shooter-redux/Bonus/kenvector_future.ttf" id="2_i61t7"]
+[ext_resource type="PackedScene" uid="uid://ixp1f3rf7p1a" path="res://base_button.tscn" id="3_p7qgt"]
+[ext_resource type="Texture2D" uid="uid://c1g2vy6w6mdtd" path="res://assets/kenney_space-shooter-redux/PNG/UI/buttonBlue.png" id="4_itq1v"]
+[ext_resource type="Texture2D" uid="uid://kg7a27p8ovn4" path="res://assets/kenney_space-shooter-redux/PNG/UI/cursor.png" id="5_duywl"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_e6f4g"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_j2hqp"]
+
+[node name="MainMenu" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_53brk")
+
+[node name="ColorRect" type="ColorRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.270588, 0.294118, 0.368627, 1)
+
+[node name="TextureRect" type="TextureRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("1_7wvhw")
+
+[node name="GameNameLabel" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -370.0
+offset_top = -500.0
+offset_right = 370.0
+offset_bottom = -429.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_fonts/font = ExtResource("2_i61t7")
+theme_override_font_sizes/font_size = 80
+text = "SPACE INVADER"
+horizontal_alignment = 1
+
+[node name="StartButton" parent="." instance=ExtResource("3_p7qgt")]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -115.0
+offset_top = 150.0
+offset_right = 115.0
+offset_bottom = 197.0
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(2.5, 2.5)
+pivot_offset = Vector2(115, 25)
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_pressed_color = Color(0, 0, 0, 1)
+theme_override_colors/font_hover_color = Color(0.279357, 0.279357, 0.279357, 1)
+theme_override_colors/font_focus_color = Color(0, 0, 0, 1)
+theme_override_colors/font_hover_pressed_color = Color(0, 0, 0, 1)
+theme_override_styles/focus = SubResource("StyleBoxEmpty_e6f4g")
+text = "START"
+icon = ExtResource("4_itq1v")
+icon_alignment = 1
+
+[node name="RaptorSelectButton" parent="." instance=ExtResource("3_p7qgt")]
+layout_mode = 1
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -127.0
+offset_top = -129.0
+offset_right = -28.0
+offset_bottom = -30.0
+grow_horizontal = 0
+grow_vertical = 0
+theme_override_styles/focus = SubResource("StyleBoxEmpty_j2hqp")
+icon = ExtResource("5_duywl")
+expand_icon = true
+
+[connection signal="pressed" from="StartButton" to="." method="_on_start_button_pressed"]
+[connection signal="pressed" from="RaptorSelectButton" to="." method="_on_raptor_select_button_pressed"]

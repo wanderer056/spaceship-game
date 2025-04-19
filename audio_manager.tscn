@@ -1,0 +1,28 @@
+[gd_scene load_steps=6 format=3 uid="uid://bsnqwf4j503os"]
+
+[ext_resource type="AudioStream" uid="uid://beawmf1lghl3f" path="res://assets/kenney_space-shooter-redux/Bonus/sfx_laser2.ogg" id="1_cev1c"]
+[ext_resource type="Script" path="res://audio_manager.gd" id="1_nehnf"]
+[ext_resource type="AudioStream" uid="uid://skycb30s4mvo" path="res://assets/kenney_space-shooter-redux/Bonus/sfx_lose.ogg" id="3_3e1py"]
+[ext_resource type="AudioStream" uid="uid://d4k3madtmdwqw" path="res://assets/kenney_space-shooter-redux/Bonus/sfx_zap.ogg" id="4_7n0j8"]
+[ext_resource type="AudioStream" uid="uid://s4kjmn43g4cn" path="res://assets/kenney_space-shooter-redux/Bonus/space-120280.mp3" id="5_l4njf"]
+
+[node name="AudioManager" type="Node"]
+script = ExtResource("1_nehnf")
+
+[node name="ButtonSound" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("1_cev1c")
+
+[node name="GameOverSound" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("3_3e1py")
+volume_db = 15.0
+
+[node name="HitSound" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("4_7n0j8")
+volume_db = 15.0
+max_distance = 1e+17
+
+[node name="BGM" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("5_l4njf")
+volume_db = 5.0
+autoplay = true
+max_distance = 1e+15

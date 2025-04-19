@@ -1,0 +1,91 @@
+[gd_scene load_steps=5 format=3 uid="uid://hiu2fdyp0ka8"]
+
+[ext_resource type="Script" path="res://game_over_screen.gd" id="1_ogajp"]
+[ext_resource type="FontFile" uid="uid://ddbj7dko42sdt" path="res://assets/kenney_space-shooter-redux/Bonus/kenvector_future_thin.ttf" id="1_yi7kg"]
+[ext_resource type="FontFile" uid="uid://dovut0ep47tvw" path="res://assets/kenney_space-shooter-redux/Bonus/kenvector_future.ttf" id="2_dfkjl"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_vxo2n"]
+bg_color = Color(0.607843, 0.803922, 0.803922, 1)
+corner_radius_top_left = 60
+corner_radius_top_right = 60
+corner_radius_bottom_right = 60
+corner_radius_bottom_left = 60
+
+[node name="GameOverScreen" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_ogajp")
+
+[node name="ColorRect" type="ColorRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.447059, 0.447059, 0.447059, 0.372549)
+
+[node name="Panel" type="Panel" parent="."]
+modulate = Color(0.988235, 0.741176, 1, 1)
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -350.0
+offset_top = -348.0
+offset_right = 350.0
+offset_bottom = 352.0
+grow_horizontal = 2
+grow_vertical = 2
+pivot_offset = Vector2(350, 350)
+theme_override_styles/panel = SubResource("StyleBoxFlat_vxo2n")
+
+[node name="GameOverVerticalContainer" type="VBoxContainer" parent="Panel"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -306.0
+offset_top = -297.0
+offset_right = 313.0
+offset_bottom = 298.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = 60
+
+[node name="HighscoreLabel" type="Label" parent="Panel/GameOverVerticalContainer"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("1_yi7kg")
+theme_override_font_sizes/font_size = 60
+text = "HIGH SCORE:  99999"
+horizontal_alignment = 1
+
+[node name="ScoreLabel" type="Label" parent="Panel/GameOverVerticalContainer"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("1_yi7kg")
+theme_override_font_sizes/font_size = 60
+text = "SCORE: 999999"
+horizontal_alignment = 1
+
+[node name="RetryButton" type="Button" parent="Panel/GameOverVerticalContainer"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("1_yi7kg")
+theme_override_font_sizes/font_size = 60
+text = "retry"
+
+[node name="HomeButton" type="Button" parent="Panel/GameOverVerticalContainer"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("2_dfkjl")
+theme_override_font_sizes/font_size = 60
+text = "HOME"
+
+[connection signal="pressed" from="Panel/GameOverVerticalContainer/RetryButton" to="." method="_on_retry_button_pressed"]
+[connection signal="pressed" from="Panel/GameOverVerticalContainer/HomeButton" to="." method="_on_home_button_pressed"]

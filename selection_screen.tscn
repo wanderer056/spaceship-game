@@ -1,0 +1,232 @@
+[gd_scene load_steps=18 format=3 uid="uid://1847tfyytffh"]
+
+[ext_resource type="Texture2D" uid="uid://dyqwqkqa80ucp" path="res://assets/Purple Nebula/Purple_Nebula_07-1024x1024.png" id="1_teyvd"]
+[ext_resource type="Script" path="res://selection_screen.gd" id="1_ydc3e"]
+[ext_resource type="PackedScene" uid="uid://ixp1f3rf7p1a" path="res://base_button.tscn" id="2_r8n0x"]
+[ext_resource type="FontFile" uid="uid://dovut0ep47tvw" path="res://assets/kenney_space-shooter-redux/Bonus/kenvector_future.ttf" id="2_wgus8"]
+[ext_resource type="Texture2D" uid="uid://bwtp5tjpurq63" path="res://assets/kenney_space-shooter-redux/PNG/playerShip1_blue.png" id="3_3wmf4"]
+[ext_resource type="Texture2D" uid="uid://bvb84qutfhiry" path="res://assets/kenney_space-shooter-redux/PNG/playerShip2_blue.png" id="4_4q2ii"]
+[ext_resource type="Texture2D" uid="uid://cfnmu5sxt4a7s" path="res://assets/kenney_space-shooter-redux/PNG/playerShip3_red.png" id="5_f1eaq"]
+[ext_resource type="FontFile" uid="uid://ddbj7dko42sdt" path="res://assets/kenney_space-shooter-redux/Bonus/kenvector_future_thin.ttf" id="7_da016"]
+[ext_resource type="Texture2D" uid="uid://bag6wcnde4a8t" path="res://assets/kenney_space-shooter-redux/PNG/UI/buttonYellow.png" id="9_8r4nm"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_pifbd"]
+font = ExtResource("2_wgus8")
+font_size = 60
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_xyhmd"]
+bg_color = Color(0.6, 0.87451, 0.6, 0.505882)
+
+[sub_resource type="ButtonGroup" id="ButtonGroup_ut1bc"]
+
+[sub_resource type="ButtonGroup" id="ButtonGroup_02qsl"]
+
+[sub_resource type="ButtonGroup" id="ButtonGroup_wqgm8"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_rdw4p"]
+font = ExtResource("7_da016")
+font_size = 40
+
+[sub_resource type="LabelSettings" id="LabelSettings_eokub"]
+font = ExtResource("7_da016")
+font_size = 25
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_r1lvg"]
+
+[node name="SelectionScreen" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_ydc3e")
+
+[node name="Background" type="TextureRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("1_teyvd")
+
+[node name="TopLabel" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = 10
+anchor_right = 1.0
+offset_top = 50.0
+offset_bottom = 121.0
+grow_horizontal = 2
+text = "Select spaceship"
+label_settings = SubResource("LabelSettings_pifbd")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="HBoxContainer" type="HBoxContainer" parent="."]
+layout_mode = 1
+anchors_preset = 10
+anchor_right = 1.0
+offset_top = 250.0
+offset_bottom = 500.0
+grow_horizontal = 2
+theme_override_constants/separation = 50
+alignment = 1
+
+[node name="Rocket1" parent="HBoxContainer" instance=ExtResource("2_r8n0x")]
+custom_minimum_size = Vector2(250, 250)
+layout_mode = 2
+theme_override_styles/pressed = SubResource("StyleBoxFlat_xyhmd")
+toggle_mode = true
+button_group = SubResource("ButtonGroup_ut1bc")
+icon = ExtResource("3_3wmf4")
+expand_icon = true
+
+[node name="Rocket2" parent="HBoxContainer" instance=ExtResource("2_r8n0x")]
+custom_minimum_size = Vector2(250, 250)
+layout_mode = 2
+theme_override_styles/pressed = SubResource("StyleBoxFlat_xyhmd")
+toggle_mode = true
+button_group = SubResource("ButtonGroup_02qsl")
+icon = ExtResource("4_4q2ii")
+expand_icon = true
+
+[node name="Rocket3" parent="HBoxContainer" instance=ExtResource("2_r8n0x")]
+custom_minimum_size = Vector2(250, 250)
+layout_mode = 2
+theme_override_styles/pressed = SubResource("StyleBoxFlat_xyhmd")
+toggle_mode = true
+button_group = SubResource("ButtonGroup_wqgm8")
+icon = ExtResource("5_f1eaq")
+expand_icon = true
+
+[node name="RocketName" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -367.5
+offset_top = -50.0
+offset_right = 367.5
+offset_bottom = 21.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "Rocket 1"
+label_settings = SubResource("LabelSettings_rdw4p")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="HBoxContainer2" type="HBoxContainer" parent="."]
+clip_contents = true
+layout_mode = 1
+anchors_preset = 14
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_left = 66.0
+offset_top = 49.0
+offset_right = -63.0
+offset_bottom = 474.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = 150
+
+[node name="VBoxContainer" type="VBoxContainer" parent="HBoxContainer2"]
+custom_minimum_size = Vector2(200, 0)
+layout_mode = 2
+theme_override_constants/separation = 50
+
+[node name="HeadingLabel" type="Label" parent="HBoxContainer2/VBoxContainer"]
+layout_mode = 2
+text = "Description"
+label_settings = SubResource("LabelSettings_rdw4p")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="DescriptionLabel" type="Label" parent="HBoxContainer2/VBoxContainer"]
+custom_minimum_size = Vector2(300, 0)
+layout_mode = 2
+text = "This is a test rocket and have very  good speed. I like this very much "
+label_settings = SubResource("LabelSettings_eokub")
+vertical_alignment = 1
+autowrap_mode = 1
+
+[node name="ColorRect" type="ColorRect" parent="HBoxContainer2"]
+custom_minimum_size = Vector2(10, 300)
+layout_mode = 2
+color = Color(0.407843, 0.407843, 0.407843, 1)
+
+[node name="VBoxContainer2" type="VBoxContainer" parent="HBoxContainer2"]
+layout_mode = 2
+theme_override_constants/separation = 40
+
+[node name="HeadingLabel2" type="Label" parent="HBoxContainer2/VBoxContainer2"]
+layout_mode = 2
+text = "M	ETRICS"
+label_settings = SubResource("LabelSettings_rdw4p")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="VBoxContainer" type="VBoxContainer" parent="HBoxContainer2/VBoxContainer2"]
+layout_mode = 2
+theme_override_constants/separation = 1
+
+[node name="SpeedLabel" type="Label" parent="HBoxContainer2/VBoxContainer2/VBoxContainer"]
+custom_minimum_size = Vector2(100, 0)
+layout_mode = 2
+text = "Speed:   100
+
+"
+label_settings = SubResource("LabelSettings_eokub")
+vertical_alignment = 1
+autowrap_mode = 1
+
+[node name="AgilityLabel" type="Label" parent="HBoxContainer2/VBoxContainer2/VBoxContainer"]
+custom_minimum_size = Vector2(100, 0)
+layout_mode = 2
+text = "Agility:  100
+
+"
+label_settings = SubResource("LabelSettings_eokub")
+vertical_alignment = 1
+autowrap_mode = 1
+
+[node name="HealthLabel" type="Label" parent="HBoxContainer2/VBoxContainer2/VBoxContainer"]
+custom_minimum_size = Vector2(100, 0)
+layout_mode = 2
+text = "Health:  100
+
+"
+label_settings = SubResource("LabelSettings_eokub")
+vertical_alignment = 1
+autowrap_mode = 1
+
+[node name="BackButton" parent="." instance=ExtResource("2_r8n0x")]
+layout_mode = 1
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -285.0
+offset_top = -95.0
+offset_right = -55.0
+offset_bottom = -48.0
+grow_horizontal = 0
+grow_vertical = 0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_pressed_color = Color(0.207843, 0.207843, 0.207843, 1)
+theme_override_colors/font_hover_color = Color(0.105882, 0.105882, 0.105882, 1)
+theme_override_colors/font_focus_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 30
+theme_override_styles/focus = SubResource("StyleBoxEmpty_r1lvg")
+text = "BACK"
+icon = ExtResource("9_8r4nm")
+icon_alignment = 1
+
+[connection signal="pressed" from="HBoxContainer/Rocket1" to="." method="_on_rocket_1_pressed"]
+[connection signal="pressed" from="HBoxContainer/Rocket2" to="." method="_on_rocket_2_pressed"]
+[connection signal="pressed" from="HBoxContainer/Rocket3" to="." method="_on_rocket_3_pressed"]
+[connection signal="pressed" from="BackButton" to="." method="_on_back_button_pressed"]

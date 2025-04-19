@@ -1,0 +1,14 @@
+[gd_scene load_steps=3 format=3 uid="uid://btqyi3exh1sbk"]
+
+[ext_resource type="PackedScene" uid="uid://bd0stu5fp1bad" path="res://entity/Enemy/base_enemy.tscn" id="1_jj2u4"]
+[ext_resource type="Texture2D" uid="uid://cm0jdb118pr67" path="res://assets/kenney_space-shooter-redux/PNG/Meteors/meteorBrown_small1.png" id="2_b8ehq"]
+
+[node name="FastAsteriodEnemy" instance=ExtResource("1_jj2u4")]
+scale = Vector2(2, 2)
+speed = 2
+damage = 50.0
+score_points = 30
+
+[node name="Sprite2D" parent="." index="0"]
+scale = Vector2(1.60714, 1.60714)
+texture = ExtResource("2_b8ehq")
